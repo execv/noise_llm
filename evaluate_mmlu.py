@@ -203,7 +203,8 @@ def cal_mmlu(res):
 
 def main(args):
     model, tokenizer = load_models_tokenizer(args)
-    for std in range(0.0, 5.0, 0.1):
+    for x in range(0, 50):
+        std = x / 10
         dev_result = {}
         for subject_name in tqdm(SUBJECTS):
             # val_file_path = os.path.join(args.eval_data_path, 'val', f'{subject_name}_val.csv')
